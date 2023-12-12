@@ -38,4 +38,13 @@ def roll_group(num_dice):
     print(stats)
     print(avg(stats))
 
-roll_group(int(sys.argv[1]))
+def main():
+    try:
+        roll_group(int(sys.argv[1]))
+    except ValueError:
+        print("Cannot roll non-numeric amount of dice")
+    except IndexError:
+        print("Put a number after the command as the first argument")
+
+# Do that namespace thing maybe?
+main()
